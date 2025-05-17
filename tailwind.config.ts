@@ -57,12 +57,12 @@ export default {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))'
         },
-        // Bolada8 brand colors
+        // Bolada8 brand colors with updated darker green
         bolada: {
           gold: '#D4AF37',
           'gold-light': '#F0E68C',
-          green: '#39FF14',
-          'green-dark': '#32CD32',
+          green: '#12512c', // Darker green color
+          'green-dark': '#0A3A1F',
           black: '#121212',
           'black-light': '#1E1E1E',
         },
@@ -101,10 +101,10 @@ export default {
         },
         'neon-pulse': {
           '0%, 100%': { 
-            boxShadow: '0 0 5px #39FF14, 0 0 10px #39FF14' 
+            boxShadow: '0 0 5px #12512c, 0 0 10px #12512c' 
           },
           '50%': { 
-            boxShadow: '0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 30px #39FF14' 
+            boxShadow: '0 0 10px #12512c, 0 0 20px #12512c, 0 0 30px #12512c' 
           }
         },
         'float': {
@@ -122,7 +122,7 @@ export default {
       backgroundImage: {
         'gradient-dark': 'linear-gradient(to bottom, #121212, #1E1E1E)',
         'gold-gradient': 'linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)',
-        'green-neon': 'linear-gradient(to right, #32CD32, #39FF14, #32CD32)',
+        'green-neon': 'linear-gradient(to right, #0A3A1F, #12512c, #0A3A1F)',
       },
     }
   },
