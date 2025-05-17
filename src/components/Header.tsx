@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, BellRing } from 'lucide-react';
@@ -42,24 +41,24 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
-            <Link to="/" className="nav-link nav-link-active">Home</Link>
-            <Link to="/live" className="nav-link">Live</Link>
+            <Link to="/" className="nav-link nav-link-active">Início</Link>
+            <Link to="/live" className="nav-link">Ao Vivo</Link>
             <Link to="/ranking" className="nav-link">Ranking</Link>
-            <Link to="/rules" className="nav-link">Rules</Link>
-            <Link to="/support" className="nav-link">Support</Link>
+            <Link to="/rules" className="nav-link">Regras</Link>
+            <Link to="/support" className="nav-link">Suporte</Link>
           </nav>
 
           {/* Authentication Buttons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="outline" className="neon-button flex items-center">
               <BellRing className="w-4 h-4 mr-2" />
-              <span>Notifications</span>
+              <span>Notificações</span>
             </Button>
             <Link to="/login">
-              <Button variant="outline" className="neon-button">Login</Button>
+              <Button variant="outline" className="neon-button">Entrar</Button>
             </Link>
             <Link to="/signup">
-              <Button className="gold-button">Sign Up</Button>
+              <Button className="gold-button">Cadastrar</Button>
             </Link>
           </div>
 
@@ -84,26 +83,26 @@ const Header = () => {
         <div className="md:hidden bg-bolada-black-light border-t border-bolada-gold/20">
           <div className="px-4 pt-2 pb-4 space-y-3">
             <Link to="/" className="nav-link block py-2 px-3 nav-link-active" onClick={toggleMobileMenu}>
-              Home
+              Início
             </Link>
             <Link to="/live" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
-              Live
+              Ao Vivo
             </Link>
             <Link to="/ranking" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
               Ranking
             </Link>
             <Link to="/rules" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
-              Rules
+              Regras
             </Link>
             <Link to="/support" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
-              Support
+              Suporte
             </Link>
             <div className="pt-4 flex flex-col space-y-3">
               <Link to="/login" onClick={toggleMobileMenu}>
-                <Button variant="outline" className="w-full neon-button">Login</Button>
+                <Button variant="outline" className="w-full neon-button">Entrar</Button>
               </Link>
               <Link to="/signup" onClick={toggleMobileMenu}>
-                <Button className="w-full gold-button">Sign Up</Button>
+                <Button className="w-full gold-button">Cadastrar</Button>
               </Link>
             </div>
           </div>

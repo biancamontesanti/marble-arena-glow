@@ -9,8 +9,8 @@ const Rules = () => {
       <Header />
       <main className="flex-grow pt-20">
         <div className="container mx-auto px-4 py-12">
-          <h1 className="text-4xl font-bold text-bolada-gold mb-8">Rules</h1>
-          <p className="text-gray-400">Rules content will be displayed here.</p>
+          <h1 className="text-4xl font-bold text-bolada-gold mb-8">Regras</h1>
+          <p className="text-gray-400">Regras serão exibidas aqui.</p>
         </div>
       </main>
       <Footer />

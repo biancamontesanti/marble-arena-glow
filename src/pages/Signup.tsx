@@ -15,15 +15,15 @@ const Signup = () => {
       <main className="flex-grow pt-20 flex items-center justify-center p-4 py-8">
         <Card className="w-full max-w-md bg-bolada-black-light border-bolada-gold/30">
           <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl text-center text-bolada-gold">Create an Account</CardTitle>
+            <CardTitle className="text-2xl text-center text-bolada-gold">Crie uma conta</CardTitle>
             <CardDescription className="text-center">
-              Enter your details to create your Bolada8 account
+              Insira seus dados para criar sua conta no Bolada8
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label htmlFor="first-name" className="text-sm font-medium text-gray-300">First Name</label>
+                <label htmlFor="first-name" className="text-sm font-medium text-gray-300">Nome</label>
                 <Input
                   id="first-name"
                   placeholder="John"
@@ -31,7 +31,7 @@ const Signup = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="last-name" className="text-sm font-medium text-gray-300">Last Name</label>
+                <label htmlFor="last-name" className="text-sm font-medium text-gray-300">Sobrenome</label>
                 <Input
                   id="last-name"
                   placeholder="Doe"
@@ -41,7 +41,7 @@ const Signup = () => {
             </div>
             
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium text-gray-300">Email</label>
+                <label htmlFor="email" className="text-sm font-medium text-gray-300">Email</label>
               <Input
                 id="email"
                 placeholder="youremail@example.com"
@@ -60,7 +60,7 @@ const Signup = () => {
             </div>
             
             <div className="space-y-2">
-              <label htmlFor="password" className="text-sm font-medium text-gray-300">Password</label>
+              <label htmlFor="password" className="text-sm font-medium text-gray-300">Senha</label>
               <Input
                 id="password"
                 type="password"
@@ -70,7 +70,7 @@ const Signup = () => {
             </div>
             
             <div className="space-y-2">
-              <label htmlFor="confirm-password" className="text-sm font-medium text-gray-300">Confirm Password</label>
+              <label htmlFor="confirm-password" className="text-sm font-medium text-gray-300">Confirmar Senha</label>
               <Input
                 id="confirm-password"
                 type="password"
@@ -85,21 +85,21 @@ const Signup = () => {
                 htmlFor="terms"
                 className="text-sm text-gray-400 leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                I agree to the{" "}
+                Eu concordo com os{" "}
                 <Link to="/terms" className="text-bolada-green hover:underline">
-                  Terms of Service
+                  Termos de Serviço
                 </Link>
-                {" "}and{" "}
+                {" "}e{" "}
                 <Link to="/privacy" className="text-bolada-green hover:underline">
-                  Privacy Policy
+                  Política de Privacidade
                 </Link>
               </label>
             </div>
           </CardContent>
           <CardFooter className="flex flex-col space-y-4">
-            <Button className="gold-button w-full">Create Account</Button>
+            <Button className="gold-button w-full">Criar conta</Button>
             <div className="text-center text-sm">
-              <span className="text-gray-400">Already have an account? </span>
+              <span className="text-gray-400">Já tem uma conta? </span>
               <Link to="/login" className="text-bolada-green hover:underline">
                 Login
               </Link>

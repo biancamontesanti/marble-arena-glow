@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
@@ -14,22 +13,22 @@ interface Race {
 const races: Race[] = [
   {
     id: '1',
-    name: 'Grand Prix - Finals',
-    startTime: 'Live Now',
+    name: 'Grand Prix - Finais',
+    startTime: 'Ao Vivo',
     image: '/src/assets/race1.webp',
     odds: '3.5x',
   },
   {
     id: '2',
-    name: 'Marble Mountain Challenge',
-    startTime: 'Starting in 12m',
+    name: 'Desafio Montanha de Bolinhas',
+    startTime: 'Começando em 12m',
     image: '/src/assets/race2.webp',
     odds: '2.8x',
   },
   {
     id: '3',
-    name: 'Speed Circuit Championship',
-    startTime: 'Today, 7:30 PM',
+    name: 'Campeonato Circuito de Velocidade',
+    startTime: 'Hoje, 19h30',
     image: '/src/assets/race3.webp',
     odds: '4.2x',
   },
@@ -102,14 +101,14 @@ const HeroCarousel = () => {
               <div className="container mx-auto px-4">
                 <div className="max-w-3xl">
                   {/* Live Indicator */}
-                  {race.startTime === "Live Now" && (
+                  {race.startTime === "Ao Vivo" && (
                     <div className="inline-flex items-center bg-red-600 rounded-full px-3 py-1 mb-4">
                       <div className="animate-pulse h-2 w-2 rounded-full bg-white mr-2"></div>
-                      <span className="text-white text-sm font-medium">LIVE NOW</span>
+                      <span className="text-white text-sm font-medium">AO VIVO</span>
                     </div>
                   )}
                   
-                  <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-4 text-stroke">
+                  <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-4 ">
                     {race.name}
                   </h2>
                   
@@ -125,10 +124,10 @@ const HeroCarousel = () => {
                   
                   <div className="flex flex-wrap gap-4">
                     <Button className="gold-button text-lg py-6 px-8">
-                      Bet Now
+                      Apostar Agora
                     </Button>
                     <Button variant="outline" className="neon-button text-lg py-6 px-8">
-                      Watch Stream
+                      Assistir Transmissão
                     </Button>
                   </div>
                 </div>

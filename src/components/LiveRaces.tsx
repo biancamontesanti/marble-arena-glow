@@ -1,8 +1,7 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Play, Clock, ChevronRight, Info } from 'lucide-react';
+import { Play, Clock, ChevronRight, Info, ChevronLeft } from 'lucide-react';
 
 interface LiveRace {
   id: string;
@@ -23,28 +22,28 @@ interface LiveRace {
 const races: LiveRace[] = [
   {
     id: '1',
-    name: 'Roleta Brasileira',
+    name: 'Grand Prix - Finais',
     status: 'live',
     time: 'Ao Vivo',
-    participants: 12,
-    price: 'R$2,50',
+    participants: 15,
+    price: 'R$3,50',
     numbers: [4, 22, 21, 7, 13],
     odds: {
-      favorite: '1.8',
-      underdog: '3.5'
+      favorite: '3.5',
+      underdog: '5.2'
     },
     image: '/src/assets/race1.webp',
     flag: '🇧🇷'
   },
   {
     id: '2',
-    name: 'All Bets Blackjack Brasileiro',
+    name: 'Desafio Montanha de Bolinhas',
     status: 'upcoming',
-    time: '10 min',
-    participants: 10,
+    time: '12 min',
+    participants: 18,
     price: 'R$5,00',
     odds: {
-      favorite: '2.2',
+      favorite: '2.8',
       underdog: '4.1'
     },
     image: '/src/assets/race2.webp',
@@ -52,48 +51,118 @@ const races: LiveRace[] = [
   },
   {
     id: '3',
-    name: 'Baccarat Mandarin 2',
+    name: 'Campeonato Circuito de Velocidade',
     status: 'upcoming',
     time: '45 min',
-    participants: 8,
-    price: 'R$10,00',
+    participants: 20,
+    price: 'R$8,00',
     odds: {
-      favorite: '1.5',
-      underdog: '5.0'
+      favorite: '4.2',
+      underdog: '6.5'
     },
     image: '/src/assets/race3.webp',
     flag: '🇧🇷'
   },
   {
     id: '4',
-    name: 'Super Spin Roulette',
-    status: 'upcoming',
-    time: '2 horas',
+    name: 'Grand Prix - Eliminatórias',
+    status: 'live',
+    time: 'Ao Vivo',
     participants: 16,
-    price: 'R$1,00',
-    numbers: [19, 13, 21, 21, 11],
+    price: 'R$4,00',
+    numbers: [19, 13, 21, 8, 11],
     odds: {
-      favorite: '3.2',
-      underdog: '7.5'
+      favorite: '3.1',
+      underdog: '5.7'
     },
-    image: '/src/assets/race4.webp',
+    image: '/src/assets/race1.webp',
     flag: '🇬🇧'
+  },
+  {
+    id: '5',
+    name: 'Desafio Montanha - Torneio Elite',
+    status: 'upcoming',
+    time: '30 min',
+    participants: 24,
+    price: 'R$7,50',
+    numbers: [6, 12, 3, 9, 5],
+    odds: {
+      favorite: '2.5',
+      underdog: '4.8'
+    },
+    image: '/src/assets/race2.webp',
+    flag: '🇺🇸'
+  },
+  {
+    id: '6',
+    name: 'Circuito de Velocidade - Sprint',
+    status: 'live',
+    time: 'Ao Vivo',
+    participants: 12,
+    price: 'R$9,00',
+    numbers: [3, 17, 8, 42, 15],
+    odds: {
+      favorite: '3.8',
+      underdog: '5.2'
+    },
+    image: '/src/assets/race3.webp',
+    flag: '🇪🇺'
+  },
+  {
+    id: '7',
+    name: 'Grand Prix - Copa Internacional',
+    status: 'upcoming',
+    time: '15 min',
+    participants: 22,
+    price: 'R$6,00',
+    numbers: [7, 14, 32, 19, 26],
+    odds: {
+      favorite: '2.9',
+      underdog: '4.7'
+    },
+    image: '/src/assets/race1.webp',
+    flag: '🇬🇧'
+  },
+  {
+    id: '8',
+    name: 'Desafio Montanha - Final',
+    status: 'upcoming',
+    time: '1 hora',
+    participants: 14,
+    price: 'R$10,00',
+    numbers: [10, 5, 8, 11, 2],
+    odds: {
+      favorite: '2.6',
+      underdog: '4.3'
+    },
+    image: '/src/assets/race2.webp',
+    flag: '🇧🇷'
   }
 ];
 
 const LiveRaces = () => {
+  const [startIndex, setStartIndex] = useState(0);
+  const itemsPerPage = 4;
+  const endIndex = Math.min(startIndex + itemsPerPage, races.length);
+  const displayedRaces = races.slice(startIndex, endIndex);
+  
+  const handleNext = () => {
+    if (startIndex + itemsPerPage < races.length) {
+      setStartIndex(startIndex + itemsPerPage);
+    } else {
+      setStartIndex(0); // Loop back to the beginning
+    }
+  };
+
   return (
     <section className="py-16 px-4 bg-bolada-black-light">
       <div className="container mx-auto">
         <div className="flex justify-between items-center mb-10">
-          <h2 className="text-3xl font-bold text-bolada-gold">Jogos Exclusivos bet365</h2>
-          <Button variant="link" className="text-[#12512c] flex items-center">
-            Ver Todos <ChevronRight className="h-4 w-4 ml-1" />
-          </Button>
+          <h2 className="text-3xl font-bold text-bolada-gold">Jogos Exclusivos Bolada8</h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {races.map((race) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 relative">
+          {displayedRaces.map((race) => (
             <Card key={race.id} className="race-card h-full bg-bolada-black border-bolada-gold/20 flex flex-col overflow-hidden relative group">
               <div className="h-48 relative overflow-hidden rounded-t-lg">
                 <img
@@ -144,6 +213,15 @@ const LiveRaces = () => {
               </CardContent>
             </Card>
           ))}
+          
+          {/* Carousel-style next button positioned on the rightmost edge */}
+          <button 
+            onClick={handleNext}
+            className="absolute -right-6 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-bolada-black border border-white/20 shadow-lg flex items-center justify-center hover:bg-bolada-gold transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-bolada-gold/50 hover:text-bolada-black text-white hidden md:flex"
+            aria-label="Next races"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ const Ranking = () => {
       <main className="flex-grow pt-20">
         <div className="container mx-auto px-4 py-12">
           <h1 className="text-4xl font-bold text-bolada-gold mb-8">Ranking</h1>
-          <p className="text-gray-400">Ranking content will be displayed here.</p>
+          <p className="text-gray-400">Ranking será exibido aqui.</p>
         </div>
       </main>
       <Footer />

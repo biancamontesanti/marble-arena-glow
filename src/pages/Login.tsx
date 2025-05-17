@@ -16,7 +16,7 @@ const Login = () => {
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl text-center text-bolada-gold">Login to Bolada8</CardTitle>
             <CardDescription className="text-center">
-              Enter your email and password to access your account
+              Insira seu email e senha para acessar sua conta
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -33,8 +33,8 @@ const Login = () => {
               <div className="flex items-center justify-between">
                 <label htmlFor="password" className="text-sm font-medium text-gray-300">Password</label>
                 <Link to="/forgot-password" className="text-xs text-bolada-green hover:underline">
-                  Forgot Password?
-                </Link>
+                  Esqueceu sua senha?
+                </Link>       
               </div>
               <Input
                 id="password"
@@ -47,9 +47,9 @@ const Login = () => {
           <CardFooter className="flex flex-col space-y-4">
             <Button className="gold-button w-full">Login</Button>
             <div className="text-center text-sm">
-              <span className="text-gray-400">Don't have an account? </span>
+              <span className="text-gray-400">Não tem uma conta? </span>
               <Link to="/signup" className="text-bolada-green hover:underline">
-                Sign Up
+                Criar conta
               </Link>
             </div>
           </CardFooter>
