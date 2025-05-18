@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -78,10 +77,25 @@
   }
   
   .neon-button {
-    @apply relative px-6 py-2 bg-transparent border-2 border-bolada-green 
+    @apply relative px-6 py-2 bg-transparent 
            text-bolada-green font-bold rounded-md transition-all duration-200 
-           hover:bg-bolada-green hover:text-black hover:animate-neon-pulse
            focus:outline-none focus:ring-2 focus:ring-bolada-green;
+  }
+
+  /* Add this new style to force the green hover effect */
+  button.neon-button:hover,
+  a.neon-button:hover {
+    @apply bg-bolada-green text-black !important;
+    animation: neon-pulse 1.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes neon-pulse {
+    from {
+      box-shadow: 0 0 5px #10b981, 0 0 10px #10b981;
+    }
+    to {
+      box-shadow: 0 0 10px #10b981, 0 0 20px #10b981, 0 0 30px #10b981;
+    }
   }
 
   .race-card {
