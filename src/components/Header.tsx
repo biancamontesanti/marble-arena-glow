@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, BellRing } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import SmoothLink from './SmoothLink';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,19 +34,19 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <SmoothLink to="/" className="flex items-center">
             <h1 className="text-bolada-gold text-3xl font-extrabold animate-glow">
               Bolada<span className="text-bolada-green">8</span>
             </h1>
-          </Link>
+          </SmoothLink>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
-            <Link to="/" className="nav-link nav-link-active">Início</Link>
-            <Link to="/live" className="nav-link">Ao Vivo</Link>
-            <Link to="/ranking" className="nav-link">Ranking</Link>
-            <Link to="/rules" className="nav-link">Regras</Link>
-            <Link to="/support" className="nav-link">Suporte</Link>
+            <SmoothLink to="/" className="nav-link nav-link-active">Início</SmoothLink>
+            <SmoothLink to="/live" className="nav-link">Ao Vivo</SmoothLink>
+            <SmoothLink to="/ranking" className="nav-link">Ranking</SmoothLink>
+            <SmoothLink to="/rules" className="nav-link">Regras</SmoothLink>
+            <SmoothLink to="/support" className="nav-link">Suporte</SmoothLink>
           </nav>
 
           {/* Authentication Buttons - Desktop */}
@@ -54,12 +55,12 @@ const Header = () => {
               <BellRing className="w-4 h-4 mr-2" />
               <span>Notificações</span>
             </Button>
-            <Link to="/login">
+            <SmoothLink to="/login">
               <Button variant="outline" className="neon-button">Entrar</Button>
-            </Link>
-            <Link to="/signup">
+            </SmoothLink>
+            <SmoothLink to="/signup">
               <Button className="gold-button">Cadastrar</Button>
-            </Link>
+            </SmoothLink>
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,28 +83,28 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-bolada-black-light border-t border-bolada-gold/20">
           <div className="px-4 pt-2 pb-4 space-y-3">
-            <Link to="/" className="nav-link block py-2 px-3 nav-link-active" onClick={toggleMobileMenu}>
+            <SmoothLink to="/" className="nav-link block py-2 px-3 nav-link-active" onClick={toggleMobileMenu}>
               Início
-            </Link>
-            <Link to="/live" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
+            </SmoothLink>
+            <SmoothLink to="/live" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
               Ao Vivo
-            </Link>
-            <Link to="/ranking" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
+            </SmoothLink>
+            <SmoothLink to="/ranking" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
               Ranking
-            </Link>
-            <Link to="/rules" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
+            </SmoothLink>
+            <SmoothLink to="/rules" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
               Regras
-            </Link>
-            <Link to="/support" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
+            </SmoothLink>
+            <SmoothLink to="/support" className="nav-link block py-2 px-3" onClick={toggleMobileMenu}>
               Suporte
-            </Link>
+            </SmoothLink>
             <div className="pt-4 flex flex-col space-y-3">
-              <Link to="/login" onClick={toggleMobileMenu}>
+              <SmoothLink to="/login" onClick={toggleMobileMenu}>
                 <Button variant="outline" className="w-full neon-button">Entrar</Button>
-              </Link>
-              <Link to="/signup" onClick={toggleMobileMenu}>
+              </SmoothLink>
+              <SmoothLink to="/signup" onClick={toggleMobileMenu}>
                 <Button className="w-full gold-button">Cadastrar</Button>
-              </Link>
+              </SmoothLink>
             </div>
           </div>
         </div>

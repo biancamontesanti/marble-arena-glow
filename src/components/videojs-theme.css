@@ -1,0 +1,165 @@
+/* Bolada8 Video.js Theme */
+.vjs-theme-bolada {
+  --vjs-theme-bolada--primary: rgba(212, 175, 55, 0.9);
+  --vjs-theme-bolada--secondary: #10b981;
+}
+
+.vjs-theme-bolada .vjs-big-play-button {
+  background-color: var(--vjs-theme-bolada--primary) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 80px !important;
+  height: 80px !important;
+  line-height: 80px !important;
+  margin-top: -40px !important;
+  margin-left: -40px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.vjs-theme-bolada .vjs-big-play-button:hover {
+  background-color: var(--vjs-theme-bolada--secondary) !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.7) !important;
+}
+
+.vjs-theme-bolada .vjs-control-bar {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0)) !important;
+  height: 50px !important;
+}
+
+.vjs-theme-bolada .vjs-play-control,
+.vjs-theme-bolada .vjs-volume-panel,
+.vjs-theme-bolada .vjs-fullscreen-control,
+.vjs-theme-bolada .vjs-picture-in-picture-control {
+  color: white !important;
+}
+
+.vjs-theme-bolada .vjs-play-control:hover,
+.vjs-theme-bolada .vjs-volume-panel:hover,
+.vjs-theme-bolada .vjs-fullscreen-control:hover,
+.vjs-theme-bolada .vjs-picture-in-picture-control:hover {
+  color: var(--vjs-theme-bolada--primary) !important;
+}
+
+.vjs-theme-bolada .vjs-progress-control .vjs-play-progress {
+  background-color: var(--vjs-theme-bolada--primary) !important;
+}
+
+.vjs-theme-bolada .vjs-load-progress div {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.vjs-theme-bolada .vjs-progress-control:hover .vjs-play-progress:before {
+  transform: scale(1.5) !important;
+  color: var(--vjs-theme-bolada--secondary) !important;
+}
+
+.vjs-theme-bolada .vjs-slider-bar {
+  background-color: var(--vjs-theme-bolada--primary) !important;
+}
+
+.vjs-theme-bolada .vjs-volume-level {
+  background-color: var(--vjs-theme-bolada--primary) !important;
+}
+
+/* Container styling */
+.video-player-container {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  background: #000;
+  max-width: 100%;
+}
+
+.video-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-wrapper {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.video-js {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Responsive sizing */
+.video-js.vjs-fluid {
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  max-height: 75vh;
+}
+
+/* Loading spinner */
+.vjs-theme-bolada .vjs-loading-spinner {
+  border: 3px solid rgba(212, 175, 55, 0.25);
+}
+
+.vjs-theme-bolada .vjs-loading-spinner:before,
+.vjs-theme-bolada .vjs-loading-spinner:after {
+  border-top-color: var(--vjs-theme-bolada--primary);
+}
+
+/* Time tooltip */
+.vjs-theme-bolada .vjs-time-tooltip {
+  background-color: var(--vjs-theme-bolada--primary) !important;
+  color: black !important;
+  font-weight: bold !important;
+}
+
+/* Error display */
+.vjs-theme-bolada .vjs-error-display {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.vjs-theme-bolada .vjs-error-display .vjs-modal-dialog-content {
+  color: white !important;
+}
+
+/* Custom error overlay */
+.video-error-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  padding: 20px;
+  text-align: center;
+}
+
+.video-error-overlay p {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.retry-button {
+  background-color: var(--vjs-theme-bolada--primary);
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background-color: var(--vjs-theme-bolada--secondary);
+  transform: scale(1.05);
+} 

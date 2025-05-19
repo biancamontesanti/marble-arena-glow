@@ -1,22 +1,16 @@
-
 import React from 'react';
-import Header from '@/components/Header';
+import Layout from '@/components/Layout';
 import HeroCarousel from '@/components/HeroCarousel';
 import LiveRaces from '@/components/LiveRaces';
 import HighlightsSection from '@/components/HighlightsSection';
-import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-      <main className="flex-grow">
-        <HeroCarousel />
-        <LiveRaces />
-        <HighlightsSection />
-      </main>
-      <Footer />
-    </div>
+    <Layout>
+      <HeroCarousel />
+      <LiveRaces />
+      <HighlightsSection />
+    </Layout>
   );
 };
 
