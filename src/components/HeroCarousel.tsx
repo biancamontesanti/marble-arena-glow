@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface Race {
   id: string;
@@ -37,6 +38,7 @@ const races: Race[] = [
 const HeroCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const navigate = useNavigate();
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % races.length);
@@ -126,7 +128,11 @@ const HeroCarousel = () => {
                     <Button className="gold-button text-lg py-6 px-8">
                       Apostar Agora
                     </Button>
-                    <Button variant="outline" className="neon-button text-lg py-6 px-8">
+                    <Button 
+                      variant="outline" 
+                      className="neon-button text-lg py-6 px-8"
+                      onClick={() => navigate('/live')}
+                    >
                       Assistir Transmissão
                     </Button>
                   </div>

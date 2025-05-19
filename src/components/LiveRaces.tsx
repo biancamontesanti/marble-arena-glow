@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Play, Clock, ChevronRight, Info, ChevronLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface LiveRace {
   id: string;
@@ -145,6 +146,7 @@ const LiveRaces = () => {
   const itemsPerPage = 4;
   const endIndex = Math.min(startIndex + itemsPerPage, races.length);
   const displayedRaces = races.slice(startIndex, endIndex);
+  const navigate = useNavigate();
   
   const handleNext = () => {
     if (startIndex + itemsPerPage < races.length) {
@@ -163,7 +165,11 @@ const LiveRaces = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 relative">
           {displayedRaces.map((race) => (
-            <Card key={race.id} className="race-card h-full bg-bolada-black border-bolada-gold/20 flex flex-col overflow-hidden relative group">
+            <Card 
+              key={race.id} 
+              className={`race-card h-full bg-bolada-black border-bolada-gold/20 flex flex-col overflow-hidden relative group ${race.status === 'live' ? 'cursor-pointer hover:border-bolada-gold/70' : ''}`}
+              onClick={race.status === 'live' ? () => navigate('/live') : undefined}
+            >
               <div className="h-48 relative overflow-hidden rounded-t-lg">
                 <img
                   src={race.image}
